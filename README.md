@@ -1,6 +1,13 @@
-# LearnSphere Dashboard
+# LearnSphere Learning Platform
 
-A responsive student learning dashboard built with React, Vite, Tailwind CSS, and JavaScript.
+A responsive student dashboard built with React, Vite, and Tailwind CSS.
+
+## Features
+
+- Course filtering and search with an empty state.
+- Accessible course-details modal: Escape and backdrop close, initial keyboard focus, scroll locking, semantic dialog attributes, and a responsive internal scroll area.
+- Sticky navigation and an accessible notification center with unread count and a bounded, scrollable panel.
+- Mobile-first course cards and layout with no horizontal page overflow.
 
 ## Run locally
 
@@ -9,38 +16,28 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173/
+## Suggested component structure
 
-## Deploy to GitHub Pages
+```text
+src/
+  components/
+    CourseCard.jsx
+    CourseDetailsModal.jsx
+    NavBar.jsx
+    NotificationCenter.jsx
+    ProgressBar.jsx
+  data/courses.js
+  App.jsx
+  index.css
+```
 
-1. Install the deployment package:
+The assignment keeps these small components in `App.jsx` so the implementation is easy to review; move them into the folders above as the application grows.
+
+## Git workflow
 
 ```bash
-npm install gh-pages --save-dev
+git checkout -b feat/course-modal-notifications
+git add src/App.jsx src/index.css README.md
+git commit -m "feat: add accessible course modal and notification center"
+git push -u origin feat/course-modal-notifications
 ```
-
-2. Update package.json with these scripts:
-
-```json
-"homepage": "https://<your-username>.github.io/<your-repo-name>",
-"scripts": {
-  "predeploy": "vite build",
-  "deploy": "gh-pages -d dist"
-}
-```
-
-3. Run:
-
-```bash
-npm run deploy
-```
-
-4. In GitHub, go to your repository settings and enable GitHub Pages.
-
-5. Select the branch and folder used by the deployed site.
-
-## Notes
-
-- Replace `<your-username>` and `<your-repo-name>` with your real GitHub details.
-- The deployed site will be available at:
-  `https://<your-username>.github.io/<your-repo-name>/`
